@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Poster Layout Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .layout-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .poster-template {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .poster-template:hover {
+            transform: translateY(-5px);
+        }
+        
+        .template-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .poster-preview {
+            aspect-ratio: 3/4;
+            background: #f8f9fa;
+            position: relative;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Layout 1: Classic Top-Down */
+        .layout1 .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .layout1 .hero-text {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .layout1 .free-text {
+            font-size: 2em;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .layout1 .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .layout1 .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-box {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75em;
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .layout1 .steps-section {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 0.7em;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        
+        .layout1 .qr-cta {
+            background: #ffd700;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .qr-placeholder {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6em;
+            text-align: center;
+        }
+        
+        .cta-text {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 0.9em;
+        }
+        
+        /* Layout 2: Split Design */
+        .layout2 .split-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .layout2 .top-banner {
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+            padding: 12px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .layout2 .main-content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .layout2 .left-panel {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: white;
+        }
+        
+        .layout2 .offer-badge {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .layout2 .hotel-icon-large {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        
+        .layout2 .right-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .info-card {
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 0.7em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .info-card strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 3px;
+        }
+        
+        .layout2 .bottom-cta {
+            background: #ffd700;
+            padding: 12px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        /* Layout 3: Modern Minimalist */
+        .layout3 .hero-image {
+            height: 45%;
+            background: linear-gradient(135deg, rgba(30,60,114,0.9) 0%, rgba(42,82,152,0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23667eea" width="100" height="100"/></svg>');
+            background-size: cover;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .layout3 .hero-image::before {
+            content: '🛏️';
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .layout3 .offer-text {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .layout3 .highlight {
+            color: #ffd700;
+            font-size: 1.3em;
+        }
+        
+        .layout3 .icons-row {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 12px;
+        }
+        
+        .icon-item {
+            text-align: center;
+            font-size: 0.7em;
+        }
+        
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+            font-size: 1.5em;
+        }
+        
+        .layout3 .process-flow {
+            background: #f0f4f8;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .flow-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.75em;
+        }
+        
+        .flow-arrow {
+            color: #667eea;
+            font-size: 1.2em;
+            margin: 0 8px;
+        }
+        
+        .layout3 .final-cta {
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .layout3 .qr-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        
+        .instructions {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-top: 30px;
+        }
+        
+        .instructions h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .instructions h3 {
+            color: #667eea;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        
+        .tip-box {
+            background: #e3f2fd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        .tip-box strong {
+            color: #1e3c72;
+        }
+        
+        @media (max-width: 768px) {
+            .layout-options {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Hotel Poster Layout Guide</h1>
+        
+        <div class="layout-options">
+            <!-- Layout 1: Classic Top-Down -->
+            <div class="poster-template">
+                <div class="template-header">Layout 1: Classic Top-Down</div>
+                <div class="poster-preview layout1">
+                    <div class="hero-section">
+                        <div class="hero-text">
+                            1 Day<br>
+                            <span class="free-text">FREE</span><br>
+                            Stay
+                        </div>
+                    </div>
+                    
+                    <div class="content-section">
+                        <div class="features-grid">
+                            <div class="feature-box">
+                                <div class="icon">🛏️</div>
+                                <div>AC Bed<br>24 Hours</div>
+                            </div>
+                            <div class="feature-box">
+                                <div class="icon">🍴</div>
+                                <div>Partner<br>Restaurants</div>
+                            </div>
+                            <div class="feature-box">
+                                <div class="icon">📱</div>
+                                <div>Easy<br>Claim</div>
+                            </div>
+                            <div class="feature-box">
+                                <div class="icon">🎁</div>
+                                <div>Zero<br>Cost</div>
+                            </div>
+                        </div>
+                        
+                        <div class="steps-section">
+                            <div style="font-weight: bold; margin-bottom: 8px; color: #1e3c72; font-size: 0.85em;">How to Claim:</div>
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div>Scan QR & visit website</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div>Choose partner restaurant</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div>Fill claim form & get ID</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div>Show ID at restaurant & hotel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-cta">
+                            <div class="qr-placeholder">QR<br>CODE</div>
+                            <div class="cta-text">SCAN NOW<br>TO CLAIM!</div>
+                            <div class="qr-placeholder">LOGO</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Layout 2: Split Design -->
+            <div class="poster-template">
+                <div class="template-header">Layout 2: Split Design</div>
+                <div class="poster-preview layout2">
+                    <div class="split-container">
+                        <div class="top-banner">
+                            🎉 LIMITED TIME OFFER 🎉
+                        </div>
+                        
+                        <div class="main-content">
+                            <div class="left-panel">
+                                <div class="offer-badge">FREE</div>
+                                <div class="hotel-icon-large">🛏️</div>
+                                <div style="font-size: 1.2em; font-weight: bold; text-align: center;">
+                                    1 Day<br>Hotel Stay
+                                </div>
+                                <div style="font-size: 0.8em; margin-top: 8px; text-align: center;">
+                                    Comfortable AC Room<br>24 Hours
+                                </div>
+                            </div>
+                            
+                            <div class="right-panel">
+                                <div class="info-card">
+                                    <strong>🍴 Partner Restaurants</strong>
+                                    Search by name, category, or location
+                                </div>
+                                <div class="info-card">
+                                    <strong>📱 Easy Process</strong>
+                                    Scan → Choose → Claim → Enjoy
+                                </div>
+                                <div class="info-card">
+                                    <strong>🎫 Get Claim ID</strong>
+                                    Instant confirmation via form
+                                </div>
+                                <div class="info-card">
+                                    <strong>✓ Simple Redemption</strong>
+                                    Show ID at restaurant & hotel
+                                </div>
+                                <div class="info-card">
+                                    <strong>⏰ Valid 24 Hours</strong>
+                                    One free stay per customer
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom-cta">
+                            <div class="qr-placeholder">QR<br>CODE</div>
+                            <div style="font-weight: bold; color: #1e3c72;">SCAN TO CLAIM YOUR STAY!</div>
+                            <div class="qr-placeholder">LOGO</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Layout 3: Modern Minimalist -->
+            <div class="poster-template">
+                <div class="template-header">Layout 3: Modern Minimalist</div>
+                <div class="poster-preview layout3">
+                    <div class="hero-image">
+                        <div class="offer-text">
+                            GET YOUR<br>
+                            <span class="highlight">FREE</span><br>
+                            1 DAY STAY
+                        </div>
+                    </div>
+                    
+                    <div class="icons-row">
+                        <div class="icon-item">
+                            <div class="icon-circle">🛏️</div>
+                            <div>AC Room</div>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-circle">🍽️</div>
+                            <div>Dining</div>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-circle">⏰</div>
+                            <div>24 Hours</div>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-circle">✓</div>
+                            <div>Instant</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-flow">
+                        <div style="font-weight: bold; color: #1e3c72; margin-bottom: 8px;">Quick Process:</div>
+                        <div class="flow-step">
+                            <span>📱 Scan</span>
+                            <span class="flow-arrow">→</span>
+                            <span>🔍 Choose Restaurant</span>
+                        </div>
+                        <div class="flow-step">
+                            <span>📝 Fill Form</span>
+                            <span class="flow-arrow">→</span>
+                            <span>🎫 Get Claim ID</span>
+                        </div>
+                        <div class="flow-step">
+                            <span>🍴 Dine</span>
+                            <span class="flow-arrow">→</span>
+                            <span>🏨 Enjoy Stay</span>
+                        </div>
+                    </div>
+                    
+                    <div class="final-cta">
+                        CLAIM YOUR FREE STAY NOW
+                        <div class="qr-section">
+                            <div class="qr-placeholder">QR<br>CODE</div>
+                            <div>Scan Here</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="instructions">
+            <h2>📋 How to Arrange Your Poster Elements</h2>
+            
+            <h3>🎯 Key Principles:</h3>
+            <ul>
+                <li><strong>Visual Hierarchy:</strong> Largest element = Main offer ("FREE 1 DAY STAY")</li>
+                <li><strong>Eye Flow:</strong> Top to bottom, left to right (Z-pattern)</li>
+                <li><strong>White Space:</strong> Don't overcrowd - leave breathing room</li>
+                <li><strong>Color Balance:</strong> Use 2-3 main colors + accent (gold for "FREE")</li>
+            </ul>
+            
+            <h3>📐 Element Placement Guide:</h3>
+            <ul>
+                <li><strong>Top 30-40%:</strong> Hero image/main offer with "1 DAY FREE STAY" text</li>
+                <li><strong>Middle 40-50%:</strong> Icons, benefits, and step-by-step process</li>
+                <li><strong>Bottom 10-20%:</strong> QR code, CTA button, and logo</li>
+            </ul>
+            
+            <h3>🖼️ Icon Arrangement:</h3>
+            <ul>
+                <li><strong>Grid Layout:</strong> 2x2 or 4 in a row for benefits (hotel, restaurant, time, free)</li>
+                <li><strong>Circular Flow:</strong> Around the main text for modern look</li>
+                <li><strong>Left Sidebar:</strong> Vertical stack with text descriptions</li>
+                <li><strong>Size:</strong> 40-60px for feature icons, 80-100px for hero icon</li>
+            </ul>
+            
+            <h3>📱 QR Code Placement:</h3>
+            <ul>
+                <li><strong>Best Position:</strong> Bottom center or bottom right</li>
+                <li><strong>Size:</strong> At least 2x2 inches (5x5 cm) for easy scanning</li>
+                <li><strong>Surrounding:</strong> Add "SCAN HERE" text and arrow pointing to it</li>
+                <li><strong>Padding:</strong> Keep 0.5 inch clear space around QR code</li>
+            </ul>
+            
+            <h3>✍️ Text Guidelines:</h3>
+            <ul>
+                <li><strong>"FREE":</strong> Make it 2-3x larger than other text, use gold/yellow</li>
+                <li><strong>Headline:</strong> 60-80pt bold font</li>
+                <li><strong>Subheading:</strong> 24-36pt regular/medium</li>
+                <li><strong>Body Text:</strong> 14-18pt, max 8-10 words per line</li>
+                <li><strong>Steps:</strong> Numbered 1-4, use icons + short phrases</li>
+            </ul>
+            
+            <h3>🎨 Tools to Use:</h3>
+            <ul>
+                <li><strong>Canva:</strong> Use poster templates (18x24 or A3 size)</li>
+                <li><strong>Figma:</strong> For precise design control</li>
+                <li><strong>Photoshop:</strong> For advanced image editing</li>
+                <li><strong>PowerPoint:</strong> Quick mockup with shapes and text</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Print a test version at actual size before mass printing. Check if QR code scans properly and text is readable from 3-5 feet away. Use high-resolution images (300 DPI for print, 150 DPI for digital displays).
+            </div>
+            
+            <div class="tip-box" style="margin-top: 15px; background: #fff3cd; border-left-color: #ffd700;">
+                <strong>⚠️ Common Mistakes to Avoid:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Making QR code too small (minimum 2x2 inches)</li>
+                    <li>Using too many fonts (stick to 2-3 max)</li>
+                    <li>Overcrowding with too many icons</li>
+                    <li>Low contrast text on busy backgrounds</li>
+                    <li>Forgetting contact info or website URL</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

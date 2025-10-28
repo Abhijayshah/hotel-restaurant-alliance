@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Free Stay Poster - Complete Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .poster-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .poster-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .poster-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .poster-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .poster-body {
+            aspect-ratio: 3/4;
+            position: relative;
+            background: #f8f9fa;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Main Poster Design */
+        .main-poster .hero-section {
+            background: linear-gradient(135deg, rgba(30,60,114,0.95) 0%, rgba(42,82,152,0.95) 100%);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-poster .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .main-poster .hotel-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-poster .main-offer {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-poster .offer-line1 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .main-poster .offer-free {
+            font-size: 3.5em;
+            font-weight: 900;
+            color: #ffd700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
+            margin: 10px 0;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 20px rgba(255,215,0,0.5); }
+            50% { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.8); }
+        }
+        
+        .main-poster .offer-line2 {
+            font-size: 2em;
+            font-weight: 700;
+        }
+        
+        .main-poster .offer-subtitle {
+            font-size: 1.1em;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+        
+        .main-poster .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            padding: 12px 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .benefit-text {
+            font-size: 0.75em;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        
+        .main-poster .how-it-works {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .main-poster .section-title {
+            color: #1e3c72;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .main-poster .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .step-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(102,126,234,0.4);
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 3px;
+            font-size: 0.9em;
+        }
+        
+        .step-description {
+            color: #555;
+            font-size: 0.75em;
+            line-height: 1.4;
+        }
+        
+        .main-poster .cta-section {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+        }
+        
+        .qr-box {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border: 3px solid #1e3c72;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1e3c72;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .qr-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .qr-text {
+            font-size: 0.7em;
+        }
+        
+        .cta-text {
+            flex: 1;
+            text-align: center;
+            padding: 0 15px;
+        }
+        
+        .cta-main {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        
+        .cta-sub {
+            font-size: 0.9em;
+            color: #2a5298;
+        }
+        
+        /* Alternate Layout 1 - Vertical Flow */
+        .vertical-layout .top-banner {
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #667eea 100%);
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .vertical-layout .banner-title {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+        
+        .vertical-layout .banner-free {
+            color: #ffd700;
+            font-size: 3em;
+        }
+        
+        .vertical-layout .banner-subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .vertical-layout .quick-benefits {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .quick-benefit {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .quick-benefit-icon {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+        
+        .quick-benefit-text {
+            font-size: 0.8em;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        
+        .vertical-layout .steps-visual {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .visual-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        .visual-step:not(:last-child)::after {
+            content: '↓';
+            position: absolute;
+            left: 17px;
+            bottom: -15px;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .visual-step-num {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 15px;
+            flex-shrink: 0;
+            box-shadow: 0 3px 10px rgba(102,126,234,0.5);
+        }
+        
+        .visual-step-info {
+            flex: 1;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        
+        .visual-step-title {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 0.85em;
+            margin-bottom: 3px;
+        }
+        
+        .visual-step-desc {
+            font-size: 0.7em;
+            color: #666;
+            line-height: 1.3;
+        }
+        
+        .vertical-layout .bottom-action {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+        }
+        
+        .bottom-action-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        
+        .bottom-action-qr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Compact Layout */
+        .compact-layout .compact-hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #667eea 100%);
+            border-radius: 12px;
+            padding: 25px 15px;
+            text-align: center;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .compact-layout .compact-title {
+            font-size: 2.2em;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+        
+        .compact-layout .compact-free {
+            color: #ffd700;
+            font-size: 1.4em;
+        }
+        
+        .compact-layout .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .compact-box {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .compact-box-title {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .compact-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compact-list li {
+            font-size: 0.7em;
+            color: #666;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .compact-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .compact-layout .mini-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .mini-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        
+        .mini-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 15px;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .mini-step-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .mini-step-text {
+            font-size: 0.65em;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        
+        .compact-layout .final-cta {
+            background: #ffd700;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        @media (max-width: 1200px) {
+            .poster-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .poster-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-poster .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏨 Professional Poster Designs - Choose Your Favorite!</h1>
+        
+        <div class="poster-showcase">
+            <!-- Main Design -->
+            <div class="poster-card">
+                <div class="poster-header">Design 1: Premium Complete Layout</div>
+                <div class="poster-body main-poster">
+                    <div class="hero-section">
+                        <div class="hotel-icon">🛏️</div>
+                        <div class="main-offer">
+                            <div class="offer-line1">GET YOUR</div>
+                            <div class="offer-free">FREE</div>
+                            <div class="offer-line2">1 DAY STAY</div>
+                            <div class="offer-subtitle">Comfortable AC Room • 24 Hours</div>
+                        </div>
+                    </div>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🛏️</div>
+                            <div class="benefit-text">AC Room<br>24 Hours</div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🍽️</div>
+                            <div class="benefit-text">Partner<br>Restaurants</div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📱</div>
+                            <div class="benefit-text">Easy<br>Process</div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">✨</div>
+                            <div class="benefit-text">100%<br>Free</div>
+                        </div>
+                    </div>
+                    
+                    <div class="how-it-works">
+                        <div class="section-title">
+                            <span>🎯</span>
+                            <span>How It Works</span>
+                        </div>
+                        <div class="steps-container">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Choose Your Restaurant</div>
+                                    <div class="step-description">Pick from our partner restaurants based on your budget and preference</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Dine & Collect Bills</div>
+                                    <div class="step-description">Enjoy meals and save your bills until you reach the required amount</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Scan QR Code or Visit Website</div>
+                                    <div class="step-description">Look for our poster at the restaurant or visit our website</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <div class="step-title">Submit Your Claim</div>
+                                    <div class="step-description">Upload photos of your bills and complete the simple claim form</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <div class="step-title">Enjoy Your FREE Stay!</div>
+                                    <div class="step-description">Get verified within 24-48 hours and book your complimentary stay</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <div class="qr-box">
+                            <div class="qr-icon">📱</div>
+                            <div class="qr-text">SCAN<br>HERE</div>
+                        </div>
+                        <div class="cta-text">
+                            <div class="cta-main">CLAIM YOUR FREE STAY NOW!</div>
+                            <div class="cta-sub">Scan QR Code • Visit Website • Start Enjoying</div>
+                        </div>
+                        <div class="qr-box">
+                            <div class="qr-icon">🏨</div>
+                            <div class="qr-text">YOUR<br>LOGO</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vertical Flow Design -->
+            <div class="poster-card">
+                <div class="poster-header">Design 2: Vertical Flow Layout</div>
+                <div class="poster-body vertical-layout">
+                    <div class="top-banner">
+                        <div class="banner-title">
+                            1 DAY <span class="banner-free">FREE</span> STAY
+                        </div>
+                        <div class="banner-subtitle">Comfortable AC Room • Zero Cost</div>
+                    </div>
+                    
+                    <div class="quick-benefits">
+                        <div class="quick-benefit">
+                            <div class="quick-benefit-icon">🍴</div>
+                            <div class="quick-benefit-text">Dine</div>
+                        </div>
+                        <div class="quick-benefit">
+                            <div class="quick-benefit-icon">📸</div>
+                            <div class="quick-benefit-text">Collect</div>
+                        </div>
+                        <div class="quick-benefit">
+                            <div class="quick-benefit-icon">📱</div>
+                            <div class="quick-benefit-text">Submit</div>
+                        </div>
+                        <div class="quick-benefit">
+                            <div class="quick-benefit-icon">🛏️</div>
+                            <div class="quick-benefit-text">Enjoy</div>
+                        </div>
+                    </div>
+                    
+                    <div class="steps-visual">
+                        <div class="visual-step">
+                            <div class="visual-step-num">1</div>
+                            <div class="visual-step-info">
+                                <div class="visual-step-title">Choose Your Restaurant</div>
+                                <div class="visual-step-desc">Pick from partner restaurants based on budget & preference</div>
+                            </div>
+                        </div>
+                        <div class="visual-step">
+                            <div class="visual-step-num">2</div>
+                            <div class="visual-step-info">
+                                <div class="visual-step-title">Dine & Collect Bills</div>
+                                <div class="visual-step-desc">Save bills until you reach required amount for restaurant</div>
+                            </div>
+                        </div>
+                        <div class="visual-step">
+                            <div class="visual-step-num">3</div>
+                            <div class="visual-step-info">
+                                <div class="visual-step-title">Scan QR or Visit Website</div>
+                                <div class="visual-step-desc">Find our poster at restaurant or go to our website</div>
+                            </div>
+                        </div>
+                        <div class="visual-step">
+                            <div class="visual-step-num">4</div>
+                            <div class="visual-step-info">
+                                <div class="visual-step-title">Submit Your Claim</div>
+                                <div class="visual-step-desc">Upload bill photos & complete simple claim form</div>
+                            </div>
+                        </div>
+                        <div class="visual-step">
+                            <div class="visual-step-num">5</div>
+                            <div class="visual-step-info">
+                                <div class="visual-step-title">Enjoy FREE Stay!</div>
+                                <div class="visual-step-desc">Get verified in 24-48 hours & book your stay</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-action">
+                        <div class="bottom-action-title">START YOUR CLAIM TODAY!</div>
+                        <div class="bottom-action-qr">
+                            <div class="qr-box">
+                                <div class="qr-icon">📱</div>
+                                <div class="qr-text">SCAN<br>NOW</div>
+                            </div>
+                            <div style="font-size: 1.1em; font-weight: 600; color: #1e3c72;">
+                                Scan • Claim • Stay FREE
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Compact Design -->
+            <div class="poster-card">
+                <div class="poster-header">Design 3: Compact Info Layout</div>
+                <div class="poster-body compact-layout">
+                    <div class="compact-hero">
+                        <div class="compact-title">
+                            CLAIM YOUR<br>
+                            <span class="compact-free">FREE</span> 1 DAY STAY
+                        </div>
+                        <div style="margin-top: 10px; font-size: 1em;">
+                            🛏️ Comfortable AC Room • 24 Hours
+                        </div>
+                    </div>
+                    
+                    <div class="two-column">
+                        <div class="compact-box">
+                            <div class="compact-box-title">
+                                <span>✨</span> What You Get
+                            </div>
+                            <ul class="compact-list">
+                                <li>Free AC room stay</li>
+                                <li>24 hours comfort</li>
+                                <li>Premium hotel</li>
+                                <li>Zero hidden cost</li>
+                            </ul>
+                        </div>
+                        <div class="compact-box">
+                            <div class="compact-box-title">
+                                <span>📋</span> Requirements
+                            </div>
+                            <ul class="compact-list">
+                                <li>Dine at partners</li>
+                                <li>Collect your bills</li>
+                                <li>Reach min. amount</li>
+                                <li>Upload & claim</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="compact-box" style="margin-bottom: 15px;">
+                        <div class="compact-box-title">
+                            <span>🎯</span> Simple 5-Step Process
+                        </div>
+                        <div class="compact-list">
+                            <li><strong>Step 1:</strong> Choose restaurant by budget</li>
+                            <li><strong>Step 2:</strong> Dine & save bills</li>
+                            <li><strong>Step 3:</strong> Scan QR or visit site</li>
+                            <li><strong>Step 4:</strong> Upload bills & claim</li>
+                            <li><strong>Step 5:</strong> Verified in 24-48hrs</li>
+                        </div>
+                    </div>
+                    
+                    <div class="mini-steps">
+                        <div class="mini-step">
+                            <div class="mini-step-icon">🍽️</div>
+                            <div class="mini-step-text">Dine</div>
+                        </div>
+                        <div class="mini-step">
+                            <div class="mini-step-icon">💰</div>
+                            <div class="mini-step-text">Save Bills</div>
+                        </div>
+                        <div class="mini-step">
+                            <div class="mini-step-icon">📤</div>
+                            <div class="mini-step-text">Submit</div>
+                        </div>
+                        <div class="mini-step">
+                            <div class="mini-step-icon">✅</div>
+                            <div class="mini-step-text">Verified</div>
+                        </div>
+                        <div class="mini-step">
+                            <div class="mini-step-icon">🏨</div>
+                            <div class="mini-step-text">Stay Free</div>
+                        </div>
+                    </div>
+                    
+                    <div class="final-cta">
+                        <div class="qr-box">
+                            <div class="qr-icon">📱</div>
+                            <div class="qr-text">SCAN</div>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <div style="font-size: 1.3em; font-weight: bold; color: #1e3c72;">
+                                CLAIM NOW!
+                            </div>
+                            <div style="font-size: 0.85em; color: #2a
