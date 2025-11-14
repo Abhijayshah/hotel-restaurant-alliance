@@ -718,6 +718,48 @@
                     align-items: flex-start;
                 }
             }
+
+            /* QR banner styles */
+            .poster-top .qr-banner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                margin: 10px 0 16px;
+                padding: 12px;
+                background: #ffffff;
+                border: 1px solid #e5e7eb;
+                border-radius: 10px;
+            }
+            .poster-top .qr-info {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .poster-top .qr-title {
+                font-weight: 700;
+                color: #374151;
+            }
+            .poster-top .qr-sub {
+                color: #6b7280;
+            }
+            .poster-top .qr-image {
+                width: 160px;
+                height: 160px;
+                border-radius: 8px;
+                border: 1px solid #e5e7eb;
+                background: #fff;
+            }
+            @media (max-width: 640px) {
+                .poster-top .qr-banner {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .poster-top .qr-image {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
         </style>
     </head>
 <body>
@@ -727,6 +769,14 @@
             <div class="poster-showcase">
                 <!-- Compact Design Only -->
                 <div class="poster-card">
+                    <div class="qr-banner">
+                        <div class="qr-info">
+                            <div class="qr-title">QR Code: Room Details Website</div>
+                            <div class="qr-sub">Scan to open full room details</div>
+                            <a class="btn" href="https://bit.ly/GetRoomSingrauli?r=qr" target="_blank" rel="noopener">Open Room Details</a>
+                        </div>
+                        <img class="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fbit.ly%2FGetRoomSingrauli%3Fr%3Dqr" alt="QR code linking to room details website" loading="lazy">
+                    </div>
                     <div class="poster-header">DashBoard</div>
                     <div class="instagram-inline">
                         <div>
