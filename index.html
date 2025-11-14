@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comfortable Stay Hotel - Claim Your Free Stay</title>
+    <title>Comfortable Stay- Claim Your Free Stay</title>
     <style>
         * {
             margin: 0;
@@ -410,13 +411,294 @@
                 padding: 10px;
             }
         }
+        /* Poster Top (scoped styles from posterguid2 Design 3) */
+        .poster-top h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .poster-top .poster-showcase {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .poster-top .poster-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .poster-top .poster-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .poster-top .poster-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .poster-top .poster-body {
+            aspect-ratio: 3/4;
+            position: relative;
+            background: #f8f9fa;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .poster-top .compact-hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #667eea 100%);
+            border-radius: 12px;
+            padding: 25px 15px;
+            text-align: center;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .poster-top .compact-title {
+            font-size: 2.2em;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .poster-top .compact-free {
+            color: #ffd700;
+            font-size: 1.4em;
+        }
+
+        .poster-top .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .poster-top .compact-box {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .poster-top .compact-box-title {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .poster-top .compact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .poster-top .compact-list li {
+            font-size: 0.7em;
+            color: #666;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .poster-top .compact-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .poster-top .mini-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+
+        .poster-top .mini-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .poster-top .mini-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 15px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .poster-top .mini-step-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .poster-top .mini-step-text {
+            font-size: 0.65em;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        .poster-top .final-cta {
+            background: #ffd700;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .poster-top .qr-box {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border: 3px solid #1e3c72;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1e3c72;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .poster-top .qr-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .poster-top .qr-text {
+            font-size: 0.7em;
+        }
+
+        @media (max-width: 768px) {
+            .poster-top .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <section class="poster-top">
+            <h1>🏨 ComForTable And Stay</h1>
+            <div class="poster-showcase">
+                <!-- Compact Design Only -->
+                <div class="poster-card">
+                    <div class="poster-header">DashBoard</div>
+                    <div class="poster-body compact-layout">
+                        <div class="compact-hero">
+                            <div class="compact-title">
+                                CLAIM YOUR<br>
+                                <span class="compact-free">FREE</span> 1 DAY STAY
+                            </div>
+                            <div style="margin-top: 10px; font-size: 1em;">
+                                🛏️ Comfortable AC Room • 24 Hours
+                            </div>
+                        </div>
+                        
+                        <div class="two-column">
+                            <div class="compact-box">
+                                <div class="compact-box-title">
+                                    <span>✨</span> What You Get
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Free AC room stay</li>
+                                    <li>24 hours comfort</li>
+                                    <li>Premium hotel</li>
+                                    <li>Zero hidden cost</li>
+                                </ul>
+                            </div>
+                            <div class="compact-box">
+                                <div class="compact-box-title">
+                                    <span>📋</span> Requirements
+                                </div>
+                                <ul class="compact-list">
+                                    <li>Dine at partners</li>
+                                    <li>Collect your bills</li>
+                                    <li>Reach min. amount</li>
+                                    <li>Upload & claim</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="compact-box" style="margin-bottom: 15px;">
+                            <div class="compact-box-title">
+                                <span>🎯</span> Simple 5-Step Process
+                            </div>
+                            <div class="compact-list">
+                                <li><strong>Step 1:</strong> Choose restaurant by budget</li>
+                                <li><strong>Step 2:</strong> Dine & save bills</li>
+                                <li><strong>Step 3:</strong> Scan QR or visit site</li>
+                                <li><strong>Step 4:</strong> Upload bills & claim</li>
+                                <li><strong>Step 5:</strong> Verified in 24-48hrs</li>
+                            </div>
+                        </div>
+                        
+                        <div class="mini-steps">
+                            <div class="mini-step">
+                                <div class="mini-step-icon">🍽️</div>
+                                <div class="mini-step-text">Dine</div>
+                            </div>
+                            <div class="mini-step">
+                                <div class="mini-step-icon">💰</div>
+                                <div class="mini-step-text">Save Bills</div>
+                            </div>
+                            <div class="mini-step">
+                                <div class="mini-step-icon">📤</div>
+                                <div class="mini-step-text">Submit</div>
+                            </div>
+                            <div class="mini-step">
+                                <div class="mini-step-icon">✅</div>
+                                <div class="mini-step-text">Verified</div>
+                            </div>
+                            <div class="mini-step">
+                                <div class="mini-step-icon">🏨</div>
+                                <div class="mini-step-text">Stay Free</div>
+                            </div>
+                        </div>
+                        
+                        <div class="final-cta">
+                            <div class="qr-box">
+                                <div class="qr-icon">📱</div>
+                                <div class="qr-text">SCAN</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="font-size: 1.3em; font-weight: bold; color: #1e3c72;">
+                                    CLAIM NOW!
+                                </div>
+                                <div style="font-size: 0.85em; color: #2a5298;">
+                                    Scan • Claim • Stay FREE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <header>
-            <h1>🏨 Comfortable Stay Hotel</h1>
-            <p class="tagline">Dine. Save. Stay. Enjoy!</p>
+            <h1>🏨 Comfortable Stay</h1>
+            <p class="tagline">Dine. Save. Stay(Dormintory/ Pg / Hotel ). Enjoy!</p>
         </header>
 
         <div class="hero">
