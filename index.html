@@ -687,6 +687,37 @@
                     align-items: flex-start;
                 }
             }
+
+            /* Inline Instagram banner inside poster-top dashboard */
+            .poster-top .instagram-inline {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                margin: 10px 0 16px;
+                padding: 10px 12px;
+                background: #fff;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+            }
+            .poster-top .instagram-inline .inline-title {
+                font-weight: 600;
+                color: #374151;
+            }
+            .poster-top .instagram-inline .inline-handle {
+                font-weight: 600;
+                color: #1f2937;
+            }
+            .poster-top .instagram-inline .inline-sub {
+                color: #6b7280;
+                font-size: 0.95em;
+            }
+            @media (max-width: 640px) {
+                .poster-top .instagram-inline {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
         </style>
     </head>
 <body>
@@ -697,6 +728,14 @@
                 <!-- Compact Design Only -->
                 <div class="poster-card">
                     <div class="poster-header">DashBoard</div>
+                    <div class="instagram-inline">
+                        <div>
+                            <div class="inline-title">Check Instagram for Room Details</div>
+                            <div class="inline-handle">@com_for_table_stay</div>
+                            <div class="inline-sub">Photos, room types, updates, and more.</div>
+                        </div>
+                        <a class="btn btn-instagram" href="https://www.instagram.com/com_for_table_stay/" target="_blank" rel="noopener">View on Instagram</a>
+                    </div>
                     <div class="poster-body compact-layout">
                         <div class="compact-hero">
                             <div class="compact-title">
@@ -822,7 +861,7 @@
                 <div class="contact-number">+91 7879028316</div>
                 <div class="contact-actions">
                     <a class="btn btn-call" href="tel:+917879028316">Call</a>
-                    <a class="btn btn-whatsapp" href="https://wa.me/917879028316?text=Hi%20I%20want%20to%20claim%20a%20free%20stay" target="_blank" rel="noopener">WhatsApp</a>
+                    <a class="btn btn-whatsapp" href="https://wa.me/917879028316?text=Hello,%20I%20want%20to%20book%20a%20bed%2Froom.%20from%20customer%20side%20to%20us" target="_blank" rel="noopener">WhatsApp</a>
                 </div>
             </div>
             <div class="contact-item">
