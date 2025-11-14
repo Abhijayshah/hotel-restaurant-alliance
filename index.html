@@ -638,7 +638,57 @@
             }
         }
     </style>
-</head>
+        <style>
+            /* Instagram section */
+            .instagram-section {
+                max-width: 1000px;
+                margin: 30px auto 20px;
+                padding: 16px;
+                background: #f9fafb;
+                border: 1px solid #e5e7eb;
+                border-radius: 10px;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            }
+            .instagram-header {
+                text-align: center;
+                margin-bottom: 10px;
+                color: #374151;
+            }
+            .instagram-card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 14px 16px;
+                background: #ffffff;
+                border: 1px solid #e5e7eb;
+                border-radius: 10px;
+            }
+            .insta-handle {
+                font-weight: 600;
+                color: #1f2937;
+            }
+            .btn-instagram {
+                display: inline-block;
+                padding: 10px 14px;
+                border-radius: 8px;
+                background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+                color: #fff;
+                text-decoration: none;
+                transition: transform 0.15s ease, box-shadow 0.15s ease;
+            }
+            .btn-instagram:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 16px rgba(221, 42, 123, 0.35);
+            }
+            @media (max-width: 600px) {
+                .instagram-card {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+        </style>
+    </head>
 <body>
     <div class="container">
         <section class="poster-top">
@@ -753,6 +803,17 @@
             <button class="btn" onclick="scrollToRestaurants()">View Restaurant Offers</button>
             <button class="btn" onclick="showClaimForm()">Claim Your Free Stay</button>
         </div>
+
+        <section class="instagram-section" id="instagram">
+            <h2 class="instagram-header">Check Instagram for Room Details</h2>
+            <div class="instagram-card">
+                <div>
+                    <div class="insta-handle">@com_for_table_stay</div>
+                    <div style="color:#6b7280;">Photos, room types, updates, and more.</div>
+                </div>
+                <a class="btn btn-instagram" href="https://www.instagram.com/com_for_table_stay/" target="_blank" rel="noopener" aria-label="View @com_for_table_stay on Instagram">View on Instagram</a>
+            </div>
+        </section>
 
         <div class="contact-section" id="contact">
             <h2 style="text-align: center; color: #667eea; margin-bottom: 10px;">Contact Us</h2>
@@ -962,7 +1023,7 @@
 
         <footer>
             <p>&copy; 2024 Comfortable Stay Hotel. All rights reserved.</p>
-            <p style="margin-top: 10px;">Contact: info@comfortablestay.com | <a href="tel:+917879028316" style="color: #fff;">+91 7879028316</a> | <a href="tel:+919770236735" style="color: #fff;">+91 9770236735</a> | <a href="https://wa.me/917879028316" target="_blank" rel="noopener" style="color: #fff;">WhatsApp</a></p>
+            <p style="margin-top: 10px;">Contact: info@comfortablestay.com | <a href="tel:+917879028316" style="color: #fff;">+91 7879028316</a> | <a href="tel:+919770236735" style="color: #fff;">+91 9770236735</a> | <a href="https://wa.me/917879028316" target="_blank" rel="noopener" style="color: #fff;">WhatsApp</a> | <a href="https://www.instagram.com/com_for_table_stay/" target="_blank" rel="noopener" style="color: #fff;">Instagram</a></p>
         </footer>
 
         <div class="steps">
