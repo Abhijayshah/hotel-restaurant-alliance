@@ -596,6 +596,47 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Contact section */
+        .contact-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 12px;
+        }
+        .contact-number {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1.1em;
+        }
+        .contact-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+        .btn-call {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        @media (max-width: 768px) {
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -711,6 +752,25 @@
             </p>
             <button class="btn" onclick="scrollToRestaurants()">View Restaurant Offers</button>
             <button class="btn" onclick="showClaimForm()">Claim Your Free Stay</button>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2 style="text-align: center; color: #667eea; margin-bottom: 10px;">Contact Us</h2>
+            <p style="text-align: center; color: #555; margin-bottom: 20px;">Start a call or WhatsApp chat instantly.</p>
+            <div class="contact-item">
+                <div class="contact-number">+91 7879028316</div>
+                <div class="contact-actions">
+                    <a class="btn btn-call" href="tel:+917879028316">Call</a>
+                    <a class="btn btn-whatsapp" href="https://wa.me/917879028316?text=Hi%20I%20want%20to%20claim%20a%20free%20stay" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-number">+91 9770236735</div>
+                <div class="contact-actions">
+                    <a class="btn btn-call" href="tel:+919770236735">Call</a>
+                    <a class="btn btn-whatsapp" href="https://wa.me/919770236735?text=Hi%20I%20want%20to%20claim%20a%20free%20stay" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+            </div>
         </div>
 
         <div class="steps">
@@ -902,7 +962,7 @@
 
         <footer>
             <p>&copy; 2024 Comfortable Stay Hotel. All rights reserved.</p>
-            <p style="margin-top: 10px;">Contact: info@comfortablestay.com | +91-XXXX-XXXXXX</p>
+            <p style="margin-top: 10px;">Contact: info@comfortablestay.com | <a href="tel:+917879028316" style="color: #fff;">+91 7879028316</a> | <a href="tel:+919770236735" style="color: #fff;">+91 9770236735</a> | <a href="https://wa.me/917879028316" target="_blank" rel="noopener" style="color: #fff;">WhatsApp</a></p>
         </footer>
 
         <div class="steps">
